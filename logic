@@ -1,3 +1,5 @@
+~timescale 1ns/1ps
+
 module logic_ex;
     logic a, b, c;
     initial begin
