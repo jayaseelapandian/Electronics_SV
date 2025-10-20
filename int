@@ -1,0 +1,9 @@
+~timescale 1ns\1ps
+
+module int_ex;
+    int x = -10;
+    int y = 25;
+    initial begin
+        $display("x + y = %0d", x + y); // Output: 15
+    end
+endmodule
