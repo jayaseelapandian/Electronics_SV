@@ -1,0 +1,13 @@
+~timescale 1ns/1ps
+
+module struct_ex;
+    typedef struct {
+        int id;
+        logic emergency;
+        string location;
+    } incident_t;
+
+    incident_t event = '{1, 1, "Zone A"};
+
+    initial $display("Incident ID=%0d, Loc=%s", event.id, event.location);
+endmodule
