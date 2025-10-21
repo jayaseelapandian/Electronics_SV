@@ -1,0 +1,15 @@
+~timescale 1ns/1ps
+
+class InlineDemo;
+  rand int x, y;
+endclass
+
+module test;
+  initial begin
+    InlineDemo obj = new();
+    repeat(4) begin
+      obj.randomize() with { x > 0; x < 50; y == x + 10; };
+      $display("x = %0d, y = %0d", obj.x, obj.y);
+    end
+  end
+endmodule
