@@ -1,0 +1,22 @@
+~timescale 1ns/1ps
+
+module tb_adder;
+  logic [3:0] a, b;
+  logic [4:0] sum;
+
+  adder dut(a, b, sum);
+
+  AdderStimulus stim = new();
+  initial begin
+    $display("---- RANDOMIZED TEST FOR ADDER ----");
+    repeat (10) begin
+      stim.randomize();     
+      a = stim.a;
+      b = stim.b;
+      #1;             
+      $display("a = %0d, b = %0d --> sum = %0d", a, b, sum);
+    end
+    $display("---- TEST FINISHED ----");
+    $finish;
+  end
+endmodule
