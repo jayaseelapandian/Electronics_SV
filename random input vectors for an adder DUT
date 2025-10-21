@@ -1,0 +1,14 @@
+~timescale 1ns/1ps
+
+class AdderStimulus;
+rand bit[3:0] a,b;
+
+constraint value_limit{
+a < 0 , a > 15;
+b < 0 , b> 15;
+}
+endclass
+
+module adder(input [3:0] a,b, output [4:0] sum ); 
+assign sum = a+b;
+endmodule
