@@ -1,0 +1,30 @@
+~timescale 1ns/1ps
+
+module automatic_task_example;
+    task static_task(input int a);
+        int temp; 
+        temp = a * 2;
+        #2;
+        $display("Static Task: temp = %0d at time %0t", temp, $time);
+    endtask
+
+    task automatic automatic_task(input int a);
+        int temp;
+        temp = a * 2;
+        #2;
+        $display("Automatic Task: temp = %0d at time %0t", temp, $time);
+    endtask
+
+    initial begin
+        fork
+            static_task(5);
+            static_task(10);
+        join
+
+        fork
+            automatic_task(5);
+            automatic_task(10);
+        join
+    end
+
+endmodule
