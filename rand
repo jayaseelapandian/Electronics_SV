@@ -1,0 +1,15 @@
+~timescale 1ns/1ps
+
+class RandomDemo;
+    rand int a;
+endclass
+
+module test;
+  initial begin 
+      RandomDemo obj = new();
+      repeat(10) begin 
+      obj.randomize();
+      $display("Random a = %0d", obj.a);
+      end
+  end
+endmodule
