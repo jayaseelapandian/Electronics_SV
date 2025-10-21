@@ -1,0 +1,13 @@
+~timescale 1ns/1ps 
+
+module union_;
+    union{
+        int a;
+        logic [31:0]b;
+}data;
+
+initial begin 
+    data.a = 32'hAABBCCDD;
+    $display("d = %h",data.b)
+end
+endmodule
