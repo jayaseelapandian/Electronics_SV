@@ -1,0 +1,21 @@
+~timescale 1ns/1ps
+
+class constrainedDemo
+rand int a,d;
+
+constraint value_limit{
+a >= 10 ,a <= 20 ;
+b inside{5,15,25};
+}
+
+endclass
+
+module test;
+initial begin 
+constrainedDemo obj = new ();
+repeat(4)begin
+obj.randomize();
+$display("rand a = %0d b = %0d",obj.a,obj.b);
+end
+end
+endmodule
