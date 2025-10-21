@@ -1,0 +1,13 @@
+~timescale 1ns/1ps
+
+module function_;
+    function int sub(intpu int a,input int b);
+    sub = a-b;
+    endfunction
+
+initial begin
+int res ;
+res = sub(25,10);
+$display("result = %0d",res);
+end 
+endmodule 
