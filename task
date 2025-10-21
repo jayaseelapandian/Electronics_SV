@@ -1,0 +1,13 @@
+~timescale 1ns/1ps
+
+module task_ex;
+
+  task dis_del(input int a,input int b);
+    #10
+    $display("resuly = %0d",a+b);
+  endtask
+
+initial begin
+dis_del(44,55);
+end
+endmodule 
