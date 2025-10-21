@@ -1,0 +1,19 @@
+// static
+
+int array[4] = '{1,2,3,4};
+
+//dynamic
+
+int dyn[];
+initial begin 
+dyn = new[2];
+dyn = '{10,20};
+end
+
+//Associative 
+
+int ass[string];
+initial begin 
+    ass["JP"]=100;
+    $display("JP score = %0d",ass["JP"]);
+end
