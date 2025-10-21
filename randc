@@ -1,0 +1,15 @@
+~timescale 1ns/1ps
+
+class RandcDemo
+   randc bit [1:0]x;
+endclass
+
+module test;
+initial begin
+    RandcDemo obj = new();
+    repeat(5) begin
+    obj.randomize():
+    $display("RandcDemo x = %0d",obj.x);
+    end
+  end
+endmodle
