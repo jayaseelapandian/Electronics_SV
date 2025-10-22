@@ -1,0 +1,32 @@
+class Base;
+  int id;
+  
+  function new(int id_val);
+    id = id_val;
+  endfunction
+
+  function void display();
+    $display("Base class, ID = %0d", id);
+  endfunction
+endclass
+
+class Derived extends Base;
+  string name;
+
+  function new(int id_val, string name_val);
+    super.new(id_val);       
+    name = name_val;
+  endfunction
+
+  function void display();
+    $display("Derived class → ID = %0d, Name = %s", id, name);
+  endfunction
+endclass
+
+
+module test;
+  initial begin
+    Derived obj = new(101, "JP");
+    obj.display();
+  end
+endmodule
