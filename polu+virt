@@ -1,0 +1,27 @@
+class Animal;
+    virtual function void sound();
+      $display("animla makes sound");
+    endfunction   
+endclass
+
+class Dog extends Animal;
+    function void sound();
+      $display("Dog barks");
+    endfunction
+endclass
+
+class Cat extends Animal;
+    function void sound();
+      $display("Cat meows");
+    endfunction
+endclass
+
+module test;
+  Animal a; 
+  initial begin
+    a = new();a.sound();     
+    a = new Dog();a.sound();    
+    a = new Cat();a.sound();    
+  end
+endmodule
+      
